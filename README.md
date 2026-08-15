@@ -126,7 +126,3 @@ rematrice-gazebo-sim/
 - The STL is authored in millimeters. The SDF applies a `0.001` scale factor and a rotation (`roll=90° yaw=90°`) to convert from the CAD coordinate system (Y-up) to Gazebo's Z-up frame.
 - Propeller meshes are borrowed from the built-in iris model (`iris_prop_ccw.dae` / `iris_prop_cw.dae`) and scaled 2.78x to represent 28-inch props.
 - If you're running on a fresh PX4 checkout, you may need to clean cached params: `rm build/px4_sitl_default/tmp/rootfs/parameters*.bson` before the first launch.
-
-## License
-
-The PX4 airframe config and SDF template follow PX4 project conventions and are provided under the **BSD-3-Clause** license. The Rematrice STL mesh is proprietary — do not redistribute without permission.
