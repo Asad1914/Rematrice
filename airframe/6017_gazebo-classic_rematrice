@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# @name Rematrice Quadcopter (~3.5kg)
+#
+# @type Quadrotor x
+# @class Copter
+#
+# @maintainer User
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+# Load default params for this platform
+param set-default CA_ROTOR_COUNT 4
+
+# Geometry / Mixer (matches SDF)
+# Rotor positions in PX4 FRD frame (NED body):
+#   Gazebo X -> PX4 +X (forward)
+#   Gazebo +Y (left) -> PX4 -Y (PX4 Y is right)
+
+# 0: Front Right (CCW) - Gazebo: X=0.391, Y=-0.446 -> PX4: PX=0.391, PY=0.446
+param set-default CA_ROTOR0_PX 0.391
+param set-default CA_ROTOR0_PY 0.446
+param set-default CA_ROTOR0_KM 0.05
+
+# 1: Rear Left (CCW) - Gazebo: X=-0.395, Y=0.458 -> PX4: PX=-0.395, PY=-0.458
+param set-default CA_ROTOR1_PX -0.395
+param set-default CA_ROTOR1_PY -0.458
+param set-default CA_ROTOR1_KM 0.05
+
+# 2: Front Left (CW) - Gazebo: X=0.391, Y=0.446 -> PX4: PX=0.391, PY=-0.446
+param set-default CA_ROTOR2_PX 0.391
+param set-default CA_ROTOR2_PY -0.446
+param set-default CA_ROTOR2_KM -0.05
+
+# 3: Rear Right (CW) - Gazebo: X=-0.395, Y=-0.457 -> PX4: PX=-0.395, PY=0.457
+param set-default CA_ROTOR3_PX -0.395
+param set-default CA_ROTOR3_PY 0.457
+param set-default CA_ROTOR3_KM -0.05
+
+# Output Mapping
+param set PWM_MAIN_FUNC1 101
+param set PWM_MAIN_FUNC2 102
+param set PWM_MAIN_FUNC3 103
+param set PWM_MAIN_FUNC4 104
+
+param set-default PWM_MAIN_MIN 1000
+param set-default PWM_MAIN_MAX 2000
+
+# Hover throttle for 3.5kg drone
+param set-default MPC_THR_HOVER 0.35

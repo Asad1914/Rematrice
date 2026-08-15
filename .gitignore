@@ -1,0 +1,5 @@
+*.sdf
+build/
+__pycache__/
+*.pyc
+*.log
