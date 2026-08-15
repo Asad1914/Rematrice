@@ -48,8 +48,8 @@ This repo contains the Gazebo model, mesh, and PX4 airframe configuration for th
 1. Clone this repo anywhere:
 
 ```bash
-git clone https://github.com/Asad1914/rematrice-gazebo-sim.git
-cd rematrice-gazebo-sim
+git clone https://github.com/Asad1914/Rematrice.git
+cd Rematrice
 ```
 
 2. Run the install script, pointing it at your PX4-Autopilot directory:
