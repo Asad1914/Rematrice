@@ -12,16 +12,6 @@ Custom quadcopter model for PX4 SITL simulation in Gazebo Classic. Built around 
 
 This repo contains the Gazebo model, mesh, and PX4 airframe configuration for the **Rematrice** quadcopter. The drone uses a custom STL body with iris-derived propellers scaled to 28 inches.
 
-### Specs
-
-| Parameter | Value |
-|---|---|
-| Frame type | Quadrotor X |
-| Mass | 3.5 kg |
-| Arm span | ~1.0 m (tip to tip) |
-| Propellers | 28 inch (iris prop mesh, 2.78x scale) |
-| Motor layout | Front-high / Rear-low |
-| Airframe ID | 6017 |
 
 ### Motor layout (top-down view)
 
