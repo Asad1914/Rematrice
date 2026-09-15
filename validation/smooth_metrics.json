@@ -1,0 +1,792 @@
+{
+  "result": {
+    "status": "EXERCISE_COMPLETE",
+    "run_directory": "/tmp/rematrice-extended-jzrqy15v",
+    "profile": "smooth",
+    "landed": true,
+    "disarmed": true,
+    "samples": 3664,
+    "landing_check": "PASS"
+  },
+  "ulog": "/tmp/rematrice-extended-jzrqy15v/rootfs/log/2026-09-15/18_15_31.ulg",
+  "estimator_window_s": [
+    30.348,
+    159.348
+  ],
+  "estimator": {
+    "filter_fault_flags": 0.0,
+    "gps_check_fail_flags": 0.0,
+    "vel_test_ratio": 0.11759856343269348,
+    "pos_test_ratio": 0.025681162253022194,
+    "hgt_test_ratio": 0.010692548006772995,
+    "hdg_test_ratio": 0.0312909334897995,
+    "reset_counter_increments": {
+      "xy_reset_counter": 0,
+      "z_reset_counter": 0,
+      "vxy_reset_counter": 0,
+      "vz_reset_counter": 0,
+      "heading_reset_counter": 0
+    },
+    "all_local_position_velocity_valid": true
+  },
+  "battery_before_final_failsafe": {
+    "voltage_v": [
+      49.469818115234375,
+      50.243717193603516
+    ],
+    "remaining": [
+      0.9380661845207214,
+      0.9948870539665222
+    ],
+    "current_a": [
+      -1.0,
+      -1.0
+    ]
+  },
+  "logged_sensor_rates": {
+    "sensor_combined": {
+      "logged_rate_hz": 215.54825105432892,
+      "largest_logged_gap_s": 0.008000000000009777
+    },
+    "sensor_gps": {
+      "logged_rate_hz": 1.0,
+      "largest_logged_gap_s": 1.2040000000000077
+    },
+    "vehicle_magnetometer": {
+      "logged_rate_hz": 14.0143402551448,
+      "largest_logged_gap_s": 0.132000000000005
+    },
+    "vehicle_air_data": {
+      "logged_rate_hz": 14.145236839656295,
+      "largest_logged_gap_s": 0.07600000000000762
+    }
+  },
+  "ulog_dropouts": [],
+  "status_transitions": [
+    {
+      "time_s": 0.068,
+      "nav_state": 4,
+      "arming_state": 1,
+      "failsafe": 0
+    },
+    {
+      "time_s": 4.376,
+      "nav_state": 17,
+      "arming_state": 2,
+      "failsafe": 0
+    },
+    {
+      "time_s": 10.28,
+      "nav_state": 4,
+      "arming_state": 2,
+      "failsafe": 0
+    },
+    {
+      "time_s": 27.368,
+      "nav_state": 14,
+      "arming_state": 2,
+      "failsafe": 0
+    },
+    {
+      "time_s": 160.436,
+      "nav_state": 18,
+      "arming_state": 2,
+      "failsafe": 1
+    },
+    {
+      "time_s": 168.008,
+      "nav_state": 14,
+      "arming_state": 1,
+      "failsafe": 0
+    }
+  ],
+  "lidar": {
+    "received_frames": 99,
+    "all_frames_900_by_96": true,
+    "sim_rate_hz": 9.999999999999988,
+    "minimum_finite_returns": 2928,
+    "nearest_return_m": 0.102,
+    "largest_frame_gap_sim_s": 0.103999999999985
+  },
+  "phases": [
+    {
+      "name": "takeoff_and_auto_hover",
+      "start": 4.348,
+      "end": 24.348,
+      "wall_duration": 19.98789443900023,
+      "target": null,
+      "ramp_seconds": 0,
+      "real_time_factor": 1.0006056446333913,
+      "max_tilt_deg": 1.1981197595596313,
+      "terminal_tilt_peak_to_peak_deg": 0.43763333559036255,
+      "max_body_rates_deg_s": [
+        7.317078113555908,
+        2.4415688514709473,
+        1.88776433467865
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.7514615654945374,
+        0.7942212224006653,
+        0.5095998048782349
+      ],
+      "motor_min": [
+        0.0,
+        0.0019386385101824999,
+        0.0,
+        0.0018228382105007768
+      ],
+      "motor_max": [
+        0.5632184743881226,
+        0.4921838343143463,
+        0.5779718160629272,
+        0.49004366993904114
+      ],
+      "motor_limit_sample_percent": 5.5,
+      "allocator_torque_unachieved_samples": 21,
+      "allocator_thrust_unachieved_samples": 51,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.3031677246093749,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.13072824478149414
+    },
+    {
+      "name": "offboard_prestream",
+      "start": 24.348,
+      "end": 27.348,
+      "wall_duration": 3.0010050109995063,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -2.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 0,
+      "real_time_factor": 0.9996651085233704,
+      "max_tilt_deg": 0.4647810161113739,
+      "terminal_tilt_peak_to_peak_deg": 0.32489871978759766,
+      "max_body_rates_deg_s": [
+        2.194915533065796,
+        2.0176196098327637,
+        2.0814497470855713
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.6663818359375,
+        0.7334194779396057,
+        0.5122337341308594
+      ],
+      "motor_min": [
+        0.48734432458877563,
+        0.4222427010536194,
+        0.4946862757205963,
+        0.4208986759185791
+      ],
+      "motor_max": [
+        0.502253532409668,
+        0.4312213063240051,
+        0.5094941258430481,
+        0.4306296110153198
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 3,
+      "allocator_thrust_unachieved_samples": 11,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.020965576171875,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.038907501846551895,
+      "max_xy_distance_from_final_target_m": 0.07927727776679364,
+      "max_abs_z_distance_from_final_target_m": 0.481781005859375,
+      "terminal_xy_rms_m": 0.06785725975400032,
+      "terminal_xy_max_m": 0.07927727776679364,
+      "terminal_abs_z_max_m": 0.481781005859375,
+      "terminal_z_rms_m": 0.4748754180564079,
+      "max_yaw_distance_from_final_target_deg": 0.3976262927214623,
+      "terminal_abs_yaw_max_deg": 0.3976262927214623,
+      "settled_within_0p15m_xy_0p10m_z_after_s": null
+    },
+    {
+      "name": "baseline_hover",
+      "start": 27.348,
+      "end": 37.348,
+      "wall_duration": 10.001937191000252,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -2.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 0,
+      "real_time_factor": 0.9998063184197962,
+      "max_tilt_deg": 0.4210442304611206,
+      "terminal_tilt_peak_to_peak_deg": 0.35251617431640625,
+      "max_body_rates_deg_s": [
+        1.8149240016937256,
+        2.2394514083862305,
+        1.9082456827163696
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.5435900092124939,
+        0.6534256339073181,
+        0.47786974906921387
+      ],
+      "motor_min": [
+        0.46903514862060547,
+        0.40222620964050293,
+        0.4697033166885376,
+        0.4022506773471832
+      ],
+      "motor_max": [
+        0.5936557650566101,
+        0.5115765929222107,
+        0.6030544638633728,
+        0.5177340507507324
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 13,
+      "allocator_thrust_unachieved_samples": 27,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.0145263671875,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.03834238648414612,
+      "max_xy_distance_from_final_target_m": 0.07393300561810204,
+      "max_abs_z_distance_from_final_target_m": 0.48272705078125,
+      "terminal_xy_rms_m": 0.054033059595438485,
+      "terminal_xy_max_m": 0.07393300561810204,
+      "terminal_abs_z_max_m": 0.020416259765625,
+      "terminal_z_rms_m": 0.014989235562029593,
+      "max_yaw_distance_from_final_target_deg": 0.34321700579314074,
+      "terminal_abs_yaw_max_deg": 0.125873556214165,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 1.3520000000000003
+    },
+    {
+      "name": "north_5m",
+      "start": 37.348,
+      "end": 51.348,
+      "wall_duration": 14.00304632299958,
+      "target": [
+        4.923547551035881,
+        0.10465633124113083,
+        -2.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9997824528370961,
+      "max_tilt_deg": 3.641369581222534,
+      "terminal_tilt_peak_to_peak_deg": 0.997258722782135,
+      "max_body_rates_deg_s": [
+        6.740497589111328,
+        3.7305305004119873,
+        2.196763038635254
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        1.0284879207611084,
+        0.7344522476196289,
+        0.5283838510513306
+      ],
+      "motor_min": [
+        0.4843346178531647,
+        0.4186568558216095,
+        0.4897076487541199,
+        0.4172860085964203
+      ],
+      "motor_max": [
+        0.5047694444656372,
+        0.4343078136444092,
+        0.5156974196434021,
+        0.4368274509906769
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 34,
+      "allocator_thrust_unachieved_samples": 37,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.087799072265625,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.06734687834978104,
+      "max_xy_distance_from_final_target_m": 5.022174198362852,
+      "max_abs_z_distance_from_final_target_m": 0.01934814453125,
+      "terminal_xy_rms_m": 0.06548831408656788,
+      "terminal_xy_max_m": 0.15968080169455112,
+      "terminal_abs_z_max_m": 0.008453369140625,
+      "terminal_z_rms_m": 0.004585586683901704,
+      "max_yaw_distance_from_final_target_deg": 0.6247232524352163,
+      "terminal_abs_yaw_max_deg": 0.19957129735860257,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 9.079999999999998
+    },
+    {
+      "name": "east_5m",
+      "start": 51.348,
+      "end": 65.348,
+      "wall_duration": 14.002955732001283,
+      "target": [
+        4.923547551035881,
+        5.104656331241131,
+        -2.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9997889208494369,
+      "max_tilt_deg": 3.4941272735595703,
+      "terminal_tilt_peak_to_peak_deg": 0.5218149423599243,
+      "max_body_rates_deg_s": [
+        2.5826001167297363,
+        6.763671398162842,
+        2.1328370571136475
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.5864097476005554,
+        0.8701239228248596,
+        0.4688379764556885
+      ],
+      "motor_min": [
+        0.48547402024269104,
+        0.415874719619751,
+        0.48886749148368835,
+        0.4172339141368866
+      ],
+      "motor_max": [
+        0.5118209719657898,
+        0.4368935823440552,
+        0.5199126601219177,
+        0.43482550978660583
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 24,
+      "allocator_thrust_unachieved_samples": 35,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.104736328125,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.06734586507081985,
+      "max_xy_distance_from_final_target_m": 5.007024462376897,
+      "max_abs_z_distance_from_final_target_m": 0.010223388671875,
+      "terminal_xy_rms_m": 0.15112780338972817,
+      "terminal_xy_max_m": 0.2132232381753733,
+      "terminal_abs_z_max_m": 0.009246826171875,
+      "terminal_z_rms_m": 0.006611296570560315,
+      "max_yaw_distance_from_final_target_deg": 0.26588560401025635,
+      "terminal_abs_yaw_max_deg": 0.14134393468424386,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 12.168
+    },
+    {
+      "name": "south_5m",
+      "start": 65.348,
+      "end": 79.348,
+      "wall_duration": 14.004072990999703,
+      "target": [
+        -0.07645244896411896,
+        5.104656331241131,
+        -2.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9997091566858928,
+      "max_tilt_deg": 3.566833019256592,
+      "terminal_tilt_peak_to_peak_deg": 0.5597586631774902,
+      "max_body_rates_deg_s": [
+        7.701781749725342,
+        3.9125547409057617,
+        2.129934549331665
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.8237317800521851,
+        0.6533719897270203,
+        0.5228822827339172
+      ],
+      "motor_min": [
+        0.48251017928123474,
+        0.41602951288223267,
+        0.4908740818500519,
+        0.421650767326355
+      ],
+      "motor_max": [
+        0.5090891122817993,
+        0.43859556317329407,
+        0.5106995701789856,
+        0.434779554605484
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 17,
+      "allocator_thrust_unachieved_samples": 46,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.060699462890625,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.05553112551569939,
+      "max_xy_distance_from_final_target_m": 4.974881744068011,
+      "max_abs_z_distance_from_final_target_m": 0.026153564453125,
+      "terminal_xy_rms_m": 0.0711900548681397,
+      "terminal_xy_max_m": 0.10899797584153471,
+      "terminal_abs_z_max_m": 0.026153564453125,
+      "terminal_z_rms_m": 0.02319562325120078,
+      "max_yaw_distance_from_final_target_deg": 0.209434090520101,
+      "terminal_abs_yaw_max_deg": 0.1641294457554064,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 7.504000000000005
+    },
+    {
+      "name": "west_5m",
+      "start": 79.348,
+      "end": 93.348,
+      "wall_duration": 14.002905646000727,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -2.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9997924969235541,
+      "max_tilt_deg": 3.241115093231201,
+      "terminal_tilt_peak_to_peak_deg": 1.3891712427139282,
+      "max_body_rates_deg_s": [
+        2.0761919021606445,
+        6.630486488342285,
+        1.8740524053573608
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.6621207594871521,
+        1.1514921188354492,
+        0.46158018708229065
+      ],
+      "motor_min": [
+        0.48416867852211,
+        0.4170451760292053,
+        0.49110716581344604,
+        0.418837308883667
+      ],
+      "motor_max": [
+        0.5058304071426392,
+        0.43517646193504333,
+        0.5113824605941772,
+        0.43648582696914673
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 15,
+      "allocator_thrust_unachieved_samples": 39,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.056396484375,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.07893199473619461,
+      "max_xy_distance_from_final_target_m": 5.045241852837946,
+      "max_abs_z_distance_from_final_target_m": 0.02838134765625,
+      "terminal_xy_rms_m": 0.07748851581418029,
+      "terminal_xy_max_m": 0.13061177120257317,
+      "terminal_abs_z_max_m": 0.0177001953125,
+      "terminal_z_rms_m": 0.012212551791238438,
+      "max_yaw_distance_from_final_target_deg": 0.1737668426742944,
+      "terminal_abs_yaw_max_deg": 0.10431064900443474,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 7.272000000000006
+    },
+    {
+      "name": "climb_to_6m",
+      "start": 93.348,
+      "end": 107.348,
+      "wall_duration": 14.001961005998965,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -5.77734375,
+        1.5703823566436768
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9998599477603084,
+      "max_tilt_deg": 0.6543177366256714,
+      "terminal_tilt_peak_to_peak_deg": 0.37504059076309204,
+      "max_body_rates_deg_s": [
+        2.21710205078125,
+        2.2136054039001465,
+        1.34415602684021
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.5960849523544312,
+        0.679033637046814,
+        0.4445060193538666
+      ],
+      "motor_min": [
+        0.4777434170246124,
+        0.4171063303947449,
+        0.48833587765693665,
+        0.4182319939136505
+      ],
+      "motor_max": [
+        0.5210579633712769,
+        0.45040619373321533,
+        0.5265505313873291,
+        0.44923684000968933
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 12,
+      "allocator_thrust_unachieved_samples": 42,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.082275390625,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.055805504322052,
+      "max_xy_distance_from_final_target_m": 0.10866203127211353,
+      "max_abs_z_distance_from_final_target_m": 3.000732421875,
+      "terminal_xy_rms_m": 0.039344427074831545,
+      "terminal_xy_max_m": 0.051383725831684934,
+      "terminal_abs_z_max_m": 0.02313232421875,
+      "terminal_z_rms_m": 0.007208008531922616,
+      "max_yaw_distance_from_final_target_deg": 0.1274444997232679,
+      "terminal_abs_yaw_max_deg": 0.1274444997232679,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 8.016000000000005
+    },
+    {
+      "name": "yaw_90",
+      "start": 107.348,
+      "end": 121.348,
+      "wall_duration": 14.004089099998964,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -5.77734375,
+        3.1411786834385733
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9997080067136274,
+      "max_tilt_deg": 0.8811559081077576,
+      "terminal_tilt_peak_to_peak_deg": 0.6465893387794495,
+      "max_body_rates_deg_s": [
+        3.0806586742401123,
+        2.2003626823425293,
+        22.671266555786133
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.9489535093307495,
+        0.6717450022697449,
+        0.5424085855484009
+      ],
+      "motor_min": [
+        0.47965824604034424,
+        0.4109182357788086,
+        0.4767531156539917,
+        0.40947631001472473
+      ],
+      "motor_max": [
+        0.5143003463745117,
+        0.44309771060943604,
+        0.5164827108383179,
+        0.441454142332077
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 47,
+      "allocator_thrust_unachieved_samples": 54,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.122100830078125,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.11759856343269348,
+      "max_xy_distance_from_final_target_m": 0.2719599016707085,
+      "max_abs_z_distance_from_final_target_m": 0.02044677734375,
+      "terminal_xy_rms_m": 0.0870791406031443,
+      "terminal_xy_max_m": 0.22381542421852035,
+      "terminal_abs_z_max_m": 0.01397705078125,
+      "terminal_z_rms_m": 0.009996251431854172,
+      "max_yaw_distance_from_final_target_deg": 90.080630383152,
+      "terminal_abs_yaw_max_deg": 0.2527076646231345,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 9.688000000000002
+    },
+    {
+      "name": "yaw_180",
+      "start": 121.348,
+      "end": 135.348,
+      "wall_duration": 14.003026346999832,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -5.77734375,
+        4.71197501023347
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9997838790755067,
+      "max_tilt_deg": 0.6339647173881531,
+      "terminal_tilt_peak_to_peak_deg": 0.3077413737773895,
+      "max_body_rates_deg_s": [
+        2.5916333198547363,
+        1.9194492101669312,
+        22.49571418762207
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.5370450019836426,
+        0.5777732133865356,
+        0.5064502954483032
+      ],
+      "motor_min": [
+        0.4793317914009094,
+        0.41270607709884644,
+        0.4855271577835083,
+        0.40972885489463806
+      ],
+      "motor_max": [
+        0.5100741982460022,
+        0.44292762875556946,
+        0.5146119594573975,
+        0.4383556544780731
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 47,
+      "allocator_thrust_unachieved_samples": 54,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.121368408203125,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.030856747180223465,
+      "max_xy_distance_from_final_target_m": 0.07156286152835827,
+      "max_abs_z_distance_from_final_target_m": 0.0159912109375,
+      "terminal_xy_rms_m": 0.0178114646220365,
+      "terminal_xy_max_m": 0.032474928433980685,
+      "terminal_abs_z_max_m": 0.015289306640625,
+      "terminal_z_rms_m": 0.008174553751504937,
+      "max_yaw_distance_from_final_target_deg": 90.06336116045205,
+      "terminal_abs_yaw_max_deg": 0.14466522785371957,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 0.0
+    },
+    {
+      "name": "descend_to_3m",
+      "start": 135.348,
+      "end": 149.348,
+      "wall_duration": 14.002041479001491,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -2.77734375,
+        4.71197501023347
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.9998542013316735,
+      "max_tilt_deg": 0.49850085377693176,
+      "terminal_tilt_peak_to_peak_deg": 0.470524400472641,
+      "max_body_rates_deg_s": [
+        3.748319149017334,
+        3.0233423709869385,
+        1.6272913217544556
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        1.1376267671585083,
+        0.7259584069252014,
+        0.4731384217739105
+      ],
+      "motor_min": [
+        0.4803111255168915,
+        0.41316285729408264,
+        0.48737141489982605,
+        0.41379523277282715
+      ],
+      "motor_max": [
+        0.5237962007522583,
+        0.44858425855636597,
+        0.5323904156684875,
+        0.44836047291755676
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 12,
+      "allocator_thrust_unachieved_samples": 36,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.143829345703125,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.03878617286682129,
+      "max_xy_distance_from_final_target_m": 0.07273487397602468,
+      "max_abs_z_distance_from_final_target_m": 3.015594482421875,
+      "terminal_xy_rms_m": 0.03289812209724662,
+      "terminal_xy_max_m": 0.04575815308217646,
+      "terminal_abs_z_max_m": 0.075042724609375,
+      "terminal_z_rms_m": 0.040490651887056126,
+      "max_yaw_distance_from_final_target_deg": 0.12589905573799554,
+      "terminal_abs_yaw_max_deg": 0.12589905573799554,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 8.463999999999999
+    },
+    {
+      "name": "lidar_active_hover",
+      "start": 149.348,
+      "end": 159.348,
+      "wall_duration": 19.555474466000305,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -2.77734375,
+        4.71197501023347
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.5113657568056597,
+      "max_tilt_deg": 0.3986038863658905,
+      "terminal_tilt_peak_to_peak_deg": 0.35919347405433655,
+      "max_body_rates_deg_s": [
+        2.8939483165740967,
+        2.392947196960449,
+        1.633170247077942
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        0.5684822201728821,
+        0.5547839999198914,
+        0.47494322061538696
+      ],
+      "motor_min": [
+        0.4841921329498291,
+        0.4200083911418915,
+        0.4926423728466034,
+        0.42083287239074707
+      ],
+      "motor_max": [
+        0.5021120309829712,
+        0.43494975566864014,
+        0.5113536715507507,
+        0.433281809091568
+      ],
+      "motor_limit_sample_percent": 0.0,
+      "allocator_torque_unachieved_samples": 15,
+      "allocator_thrust_unachieved_samples": 34,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.106903076171875,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.03377454727888107,
+      "max_xy_distance_from_final_target_m": 0.07155276856466132,
+      "max_abs_z_distance_from_final_target_m": 0.01373291015625,
+      "terminal_xy_rms_m": 0.04486872203540895,
+      "terminal_xy_max_m": 0.07074911224422367,
+      "terminal_abs_z_max_m": 0.00909423828125,
+      "terminal_z_rms_m": 0.005211612543308538,
+      "max_yaw_distance_from_final_target_deg": 0.12771269833374793,
+      "terminal_abs_yaw_max_deg": 0.1161286975014063,
+      "settled_within_0p15m_xy_0p10m_z_after_s": 0.0
+    },
+    {
+      "name": "offboard_loss_land_option",
+      "start": 159.348,
+      "end": 168.996,
+      "wall_duration": 25.190748814999097,
+      "target": [
+        -0.07645244896411896,
+        0.10465633124113083,
+        -2.77734375,
+        4.71197501023347
+      ],
+      "ramp_seconds": 8,
+      "real_time_factor": 0.3829977453570326,
+      "max_tilt_deg": 0.6467982530593872,
+      "terminal_tilt_peak_to_peak_deg": 0.6188217997550964,
+      "max_body_rates_deg_s": [
+        12.078513145446777,
+        14.791566848754883,
+        3.3974874019622803
+      ],
+      "terminal_body_rate_rms_deg_s": [
+        1.278787612915039,
+        1.5173949003219604,
+        0.5517200231552124
+      ],
+      "motor_min": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "motor_max": [
+        0.5407339334487915,
+        0.4654283821582794,
+        0.5488526821136475,
+        0.4671381115913391
+      ],
+      "motor_limit_sample_percent": 30.208333333333332,
+      "allocator_torque_unachieved_samples": 21,
+      "allocator_thrust_unachieved_samples": 15,
+      "max_vertical_estimate_error_against_aligned_groundtruth_m": 0.178497314453125,
+      "max_estimator_filter_fault_flags": 0.0,
+      "max_velocity_innovation_test_ratio": 0.04537058621644974,
+      "max_xy_distance_from_final_target_m": 0.09396411947068237,
+      "max_abs_z_distance_from_final_target_m": 2.869720458984375,
+      "terminal_xy_rms_m": 0.06659777299928528,
+      "terminal_xy_max_m": 0.09396411947068237,
+      "terminal_abs_z_max_m": 2.869720458984375,
+      "terminal_z_rms_m": 2.7869956872367303,
+      "max_yaw_distance_from_final_target_deg": 0.1412601511813542,
+      "terminal_abs_yaw_max_deg": 0.1412601511813542,
+      "settled_within_0p15m_xy_0p10m_z_after_s": null
+    }
+  ],
+  "fixture_evidence": {
+    "20N_seen": false,
+    "0p6Nm_seen": false
+  }
+}

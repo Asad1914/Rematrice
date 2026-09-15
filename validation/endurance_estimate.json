@@ -1,0 +1,81 @@
+{
+  "loaded_mass_kg": 15.174639999999997,
+  "payload_kg": 5,
+  "assumed_battery_mass_kg": 3.7,
+  "cells_series": 12,
+  "capacity_Ah": 22,
+  "assumed_nominal_cell_voltage_range_V": [
+    3.6,
+    3.7
+  ],
+  "nominal_pack_energy_Wh": [
+    950.4000000000001,
+    976.8000000000002
+  ],
+  "rotor_hover_thrust_N": [
+    40.106059481356866,
+    34.56915006178263,
+    40.641472133077635,
+    34.58437410597251
+  ],
+  "interpolated_rotor_power_W": [
+    434.239388118792,
+    353.42783033748367,
+    442.5054602475858,
+    353.64604204995874
+  ],
+  "bench_propulsion_hover_power_W": 1583.8187207538203,
+  "bench_hover_current_A": 33.35233406900564,
+  "assumed_auxiliary_power_W": 80,
+  "reserve_fraction": 0.2,
+  "scenarios": [
+    {
+      "propulsion_power_multiplier": 1,
+      "total_power_W": 1663.8187207538203,
+      "minutes_with_20_percent_reserve": [
+        27.418371623641477,
+        28.179993057631517
+      ]
+    },
+    {
+      "propulsion_power_multiplier": 1.1,
+      "total_power_W": 1822.2005928292026,
+      "minutes_with_20_percent_reserve": [
+        25.035223992090952,
+        25.730646880760144
+      ]
+    },
+    {
+      "propulsion_power_multiplier": 1.2,
+      "total_power_W": 1980.5824649045844,
+      "minutes_with_20_percent_reserve": [
+        23.033224219824515,
+        23.67303600370853
+      ]
+    },
+    {
+      "propulsion_power_multiplier": 1.4,
+      "total_power_W": 2297.3462090553485,
+      "minutes_with_20_percent_reserve": [
+        19.857346628986445,
+        20.408939590902733
+      ]
+    },
+    {
+      "propulsion_power_multiplier": 1.6,
+      "total_power_W": 2614.1099532061126,
+      "minutes_with_20_percent_reserve": [
+        17.451140470985045,
+        17.935894372956852
+      ]
+    }
+  ],
+  "source": "https://store.tmotor.com/product/u8-2-pro-u-efficiency.html",
+  "notes": [
+    "Power interpolated against required thrust, using published G27x8.8 electrical watts. Unequal rotor load and CAD cant retained.",
+    "Battery nominal voltage and auxiliary load are assumptions; no identified pack discharge curve is available.",
+    "Multipliers are sensitivity cases, not measured wind/hose/cleaning loads.",
+    "No extra hose load beyond the included 5kg payload; onboard pump energy is not included in 80W avionics allowance.",
+    "Current measured around 47-48V cannot be held constant over a Li-ion discharge. Gazebo battery timer cannot validate this estimate."
+  ]
+}

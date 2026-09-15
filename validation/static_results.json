@@ -1,0 +1,20 @@
+{
+  "total_mass_kg": 15.174639999999998,
+  "motor_constant": 0.0005135685153152339,
+  "moment_constant": 0.030258353611343308,
+  "max_rot_velocity_rad_s": 397.30675092398917,
+  "max_total_static_thrust_N": 324.2726132908491,
+  "vertical_thrust_to_weight": 2.162668994826851,
+  "hover_thrust_fraction": 0.4622686271928219,
+  "hover_motor_rpm": [
+    2668.561298362335,
+    2477.5163964796216,
+    2686.3147817106774,
+    2478.0618780328737
+  ],
+  "max_thrust_fit_error_percent": 5.509778316582237,
+  "max_torque_fit_error_percent": 4.600322781785149,
+  "min_prop_disc_clearance_m": 0.10970717545223152,
+  "estimated_bench_hover_current_A": 33.35233406900564,
+  "checks": "PASS: rendering, copy consistency, mass budget, positive physical inertia, rotor geometry, allocation signs, channel limits, static bench fit, hover fraction, battery identity"
+}

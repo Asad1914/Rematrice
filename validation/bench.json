@@ -1,0 +1,21 @@
+{
+  "source": "https://store.tmotor.com/product/u8-2-pro-u-efficiency.html",
+  "accessed": "2026-09-15",
+  "motor": "U8II Pro KV100",
+  "propeller": "G27x8.8",
+  "condition": "Manufacturer static bench, approximately 47-48 V; English page rounds voltage to whole volts. This is not a nominal-voltage Li-ion discharge test.",
+  "columns": ["throttle_percent", "thrust_g", "torque_Nm", "current_A", "rpm"],
+  "rows": [
+    [40, 2038, 0.61, 3.47, 1935],
+    [45, 2542, 0.76, 4.68, 2155],
+    [50, 3000, 0.90, 5.95, 2330],
+    [55, 3458, 1.03, 7.24, 2489],
+    [60, 3956, 1.17, 8.72, 2651],
+    [65, 4491, 1.33, 10.43, 2808],
+    [70, 4888, 1.44, 11.87, 2926],
+    [75, 5442, 1.61, 13.90, 3078],
+    [80, 5958, 1.77, 16.05, 3220],
+    [90, 7052, 2.09, 20.75, 3488],
+    [100, 8442, 2.51, 27.64, 3794]
+  ]
+}

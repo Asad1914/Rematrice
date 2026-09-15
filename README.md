@@ -1,118 +1,81 @@
-# Rematrice Quadcopter — Gazebo Classic SITL Simulation
+# Rematrice Quadcopter — Gazebo Classic SITL
 
-Custom quadcopter model for PX4 SITL simulation in Gazebo Classic. Built around a window-cleaning drone frame with 28-inch propellers.
+PX4 airframe **6017**, with the updated Rematrice CAD mesh, U8II Pro KV100
+propulsion, 27-inch G27x8.8 two-blade propellers, and a **12S 22 Ah Li-ion**
+battery profile. The provisional loaded mass is **15.17464 kg**, including
+5 kg payload and the PDF's 3.7 kg battery allowance.
 
-![Quadrotor X Configuration](https://img.shields.io/badge/config-Quad--X-blue)
-![PX4 v1.16](https://img.shields.io/badge/PX4-v1.16-orange)
-![Gazebo 11](https://img.shields.io/badge/Gazebo-Classic%2011-green)
+The CAD-derived rotor positions and cant, estimated CG/inertia, skid collisions,
+PX4 allocation and sensor lever arms are synchronized. An Airy geometric lidar
+sensor provides native Gazebo scans on demand. Motor constants are fitted to the
+manufacturer's exact Pro/G27 test series.
 
----
+**Read [PARAMETERS.md](PARAMETERS.md)** for the complete parameter audit, sources,
+old/new settings, mass accounting, assumptions, sensor coverage and limitations.
+STL contains geometry, not material densities or battery electrical behavior.
+The stock battery simulator remains a timed voltage proxy: this is not a
+validated endurance, spray, hose, or facade-interaction simulation.
 
-## Overview
+## Install and run
 
-This repo contains the Gazebo model, mesh, and PX4 airframe configuration for the **Rematrice** quadcopter. The drone uses a custom STL body with iris-derived propellers.
-
-
-### Motor layout (top-down view)
-
-```
-        FRONT (+X)
-          ▲
-  FL(CW)  │  FR(CCW)
-     2 ───┼─── 0
-          │
-     1 ───┼─── 3
-  RL(CCW) │  RR(CW)
-          ▼
-         REAR
-```
-
-## Requirements
-
-- **PX4-Autopilot** (v1.14 or later) — [github.com/PX4/PX4-Autopilot](https://github.com/PX4/PX4-Autopilot)
-- **Gazebo Classic 11** — installed with PX4 dev setup
-- Standard PX4 development toolchain (see [PX4 Dev Guide](https://docs.px4.io/main/en/dev_setup/dev_env.html))
-
-## Installation
-
-1. Clone this repo anywhere:
+Requires this PX4 checkout, Gazebo Classic 11, the PX4 build toolchain,
+Python numpy/jinja2, pymavlink for the flight check and pyulog for its summary.
+The mesh is stored with Git LFS; run `git lfs pull` after cloning.
 
 ```bash
-git clone https://github.com/Asad1914/Rematrice.git
-cd Rematrice
-```
-
-2. Run the install script, pointing it at your PX4-Autopilot directory:
-
-```bash
-chmod +x install.sh
-./install.sh ~/PX4-Autopilot
-```
-
-This copies the model + airframe into the right places and patches the CMake build files so PX4 picks it up.
-
-### Manual installation
-
-If you'd rather do it by hand:
-
-```bash
-# Copy model
-cp -r model/ ~/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/rematrice/
-
-# Copy airframe
-cp airframe/6017_gazebo-classic_rematrice ~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
-
-# Then add 'rematrice' to the models list in:
-#   src/modules/simulation/simulator_mavlink/sitl_targets_gazebo-classic.cmake
-#
-# And add '6017_gazebo-classic_rematrice' to:
-#   ROMFS/px4fmu_common/init.d-posix/airframes/CMakeLists.txt
-```
-
-## Running the Simulation
-
-### Basic launch (empty world)
-
-```bash
-cd ~/PX4-Autopilot
+./rematrice-gazebo-sim/install.sh "$PWD"
 make px4_sitl gazebo-classic_rematrice
 ```
 
-### Launch with a specific world
+Run the commands from the PX4 root. Use `HEADLESS=1` to omit Gazebo GUI.
+The default world is the KSQL airport (`world/rematrice.world`, installed as
+`worlds/rematrice.world`); the airport mesh comes from the Gazebo model database
+on first use. `make px4_sitl gazebo-classic_rematrice__empty` gives the flat
+world. An existing saved PX4 configuration may override airframe defaults.
+Preserve it and use a fresh working directory when validating this profile.
+
+Re-run `install.sh` after a checkout; the airframe file in
+`ROMFS/px4fmu_common/init.d-posix/airframes/` is not tracked by PX4.
+
+Landing needs a small change to PX4's `SimulatorMavlink.cpp` (the simulated
+int16 FIFO accelerometer clips instead of wrapping). `install.sh` applies
+`patches/simulator_mavlink_fifo_saturate.patch` if the checkout lacks it; rebuild
+PX4 afterwards. See PARAMETERS.md, "Ground contact and touchdown".
+
+## Validation
 
 ```bash
-make px4_sitl gazebo-classic_rematrice__ksql_airport
-make px4_sitl gazebo-classic_rematrice__warehouse
-make px4_sitl gazebo-classic_rematrice__baylands
+DONT_RUN=1 make px4_sitl gazebo-classic_rematrice
+python3 rematrice-gazebo-sim/scripts/derive_cad.py
+python3 rematrice-gazebo-sim/scripts/validate_model.py "$PWD"
+python3 rematrice-gazebo-sim/scripts/run_sitl_validation.py "$PWD"
+python3 rematrice-gazebo-sim/scripts/summarize_flight.py
 ```
 
-### Flying
+The flight check uses an isolated working directory, PX4 instance 1 and Gazebo
+master port 11357. It refuses occupied test TCP ports, captures runtime parameters,
+checks Airy wall detection, and tests normal takeoff, hover and automatic landing.
+It stops only the processes it created. Results are in `validation/`.
 
-Once PX4 boots and prints `Ready for takeoff!`, you can fly from the PX4 shell:
+Longer exercises and the landing check:
 
-```
-pxh> commander takeoff
-```
-
-Or connect QGroundControl / MAVSDK on UDP port **14550**.
-
-## Repo structure
-
-```
-rematrice-gazebo-sim/
-├── model/
-│   ├── meshes/
-│   │   └── Rematrice.STL          # Drone body mesh (mm units)
-│   ├── model.config               # Gazebo model metadata
-│   └── rematrice.sdf.jinja        # SDF template (jinja2 → SDF at build time)
-├── airframe/
-│   └── 6017_gazebo-classic_rematrice   # PX4 airframe parameters
-├── install.sh                     # Automated installer
-└── README.md
+```bash
+python3 rematrice-gazebo-sim/scripts/extended_flight_check.py "$PWD" [--smooth-only]
+python3 rematrice-gazebo-sim/scripts/analyze_extended_flight.py <run_directory> --label extended|smooth
+python3 rematrice-gazebo-sim/scripts/land_cycles.py "$PWD" [--world airport]
 ```
 
-## Notes
+The checked-in CAD extraction corresponds to the recorded STL SHA256. A new
+mesh needs fresh component inspection and mass assignments; connected-component
+IDs are not persistent CAD part identifiers. The independent CAD mass derivation
+uses cached geometry in `validation/cad_components.json` and records every
+inference in `validation/cad_model.json`.
 
-- The STL is authored in millimeters. The SDF applies a `0.001` scale factor and a rotation (`roll=90° yaw=90°`) to convert from the CAD coordinate system (Y-up) to Gazebo's Z-up frame.
-- Propeller meshes are borrowed from the built-in iris model (`iris_prop_ccw.dae` / `iris_prop_cw.dae`) and scaled 2.78x to represent 28-inch props.
-- If you're running on a fresh PX4 checkout, you may need to clean cached params: `rm build/px4_sitl_default/tmp/rootfs/parameters*.bson` before the first launch.
+## Key files
+
+- `model/rematrice.sdf.jinja`: Gazebo source template.
+- `model/meshes/Rematrice.STL`: updated geometry in millimeters.
+- `airframe/6017_gazebo-classic_rematrice`: PX4 overrides.
+- `world/rematrice.world`: default airport world.
+- `patches/`: PX4 source change applied by `install.sh`.
+- `validation/`: bench data, CAD mass model and the check results.

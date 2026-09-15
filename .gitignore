@@ -3,3 +3,15 @@ build/
 __pycache__/
 *.pyc
 *.log
+validation/*_events.json
+validation/*_phases.json
+validation/*_latest.json
+validation/*_parameters.txt
+validation/runtime_*
+validation/hover_samples.json
+validation/*_run.txt
+validation/resolved_model.sdf.xml
+validation/parameter_inventory.json
+validation/before.*
+validation/cad_views.png
+validation/review_*/

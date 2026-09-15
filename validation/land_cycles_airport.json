@@ -1,0 +1,32 @@
+{
+ "world": "airport",
+ "rigid_contact": false,
+ "run_directory": "/tmp/rematrice-land-airport-gkxw81me",
+ "landings": [
+  {
+   "cycle": 0,
+   "landed_and_disarmed": true,
+   "land_command_t": 19.228,
+   "landed_t": 24.468,
+   "seconds_from_command_to_landed": 5.239999999999998,
+   "z_estimate_before_m": -2.4056601524353027,
+   "max_z_estimate_below_origin_m": 0.19155097007751465,
+   "z_estimate_at_end_m": 0.18333351612091064,
+   "z_estimate_at_end_minus_takeoff_reference_m": -0.010837316513061523,
+   "max_vz_estimate_m_s": 1.0121790170669556
+  },
+  {
+   "cycle": 1,
+   "landed_and_disarmed": true,
+   "land_command_t": 46.172,
+   "landed_t": 51.164,
+   "seconds_from_command_to_landed": 4.992000000000004,
+   "z_estimate_before_m": -2.312030792236328,
+   "max_z_estimate_below_origin_m": 0.12008726596832275,
+   "z_estimate_at_end_m": 0.11783921718597412,
+   "z_estimate_at_end_minus_takeoff_reference_m": -0.06440722942352295,
+   "max_vz_estimate_m_s": 0.9186418652534485
+  }
+ ],
+ "status": "PASS"
+}

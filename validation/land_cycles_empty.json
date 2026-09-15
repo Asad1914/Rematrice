@@ -1,0 +1,32 @@
+{
+ "world": "empty",
+ "rigid_contact": false,
+ "run_directory": "/tmp/rematrice-land-empty-grdw3cfe",
+ "landings": [
+  {
+   "cycle": 0,
+   "landed_and_disarmed": true,
+   "land_command_t": 18.388,
+   "landed_t": 23.468,
+   "seconds_from_command_to_landed": 5.079999999999998,
+   "z_estimate_before_m": -2.332763671875,
+   "max_z_estimate_below_origin_m": 0.2742919921875,
+   "z_estimate_at_end_m": 0.25457763671875,
+   "z_estimate_at_end_minus_takeoff_reference_m": 0.031219482421875,
+   "max_vz_estimate_m_s": 0.9616371989250183
+  },
+  {
+   "cycle": 1,
+   "landed_and_disarmed": true,
+   "land_command_t": 45.188,
+   "landed_t": 50.068,
+   "seconds_from_command_to_landed": 4.8799999999999955,
+   "z_estimate_before_m": -2.2620849609375,
+   "max_z_estimate_below_origin_m": 0.10125732421875,
+   "z_estimate_at_end_m": 0.10125732421875,
+   "z_estimate_at_end_minus_takeoff_reference_m": -0.114715576171875,
+   "max_vz_estimate_m_s": 0.9124141335487366
+  }
+ ],
+ "status": "PASS"
+}

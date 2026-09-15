@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "run_directory": "/tmp/rematrice-sitl-rnf8tc9b",
+  "instance": 1,
+  "airy": {
+    "horizontal_samples": 900,
+    "vertical_samples": 96,
+    "finite_ranges_received": 4645,
+    "test_wall_detected": true,
+    "forward_ray_range_m": 2.9030185914784923,
+    "topic": "/gazebo/default/rematrice/base_link/airy/scan",
+    "transport": "Gazebo LaserScanStamped; no ROS or RoboSense UDP bridge",
+    "range_entries_received": 86400
+  },
+  "samples": 960,
+  "hover_samples": 350,
+  "hover_height_min_m": 2.273223876953125,
+  "hover_height_max_m": 2.317840576171875,
+  "max_hover_xy_offset_m": 0.25434397423508237,
+  "max_hover_tilt_deg": 0.895707681082091,
+  "landed": true,
+  "checks": "2.5m takeoff; hover height error <0.35m, XY offset <1m, tilt <10deg; landing; Airy wall detection",
+  "hover_altitude_above_home_min_m": 2.563873291015625,
+  "hover_altitude_above_home_max_m": 2.6085205078125,
+  "max_hover_vertical_setpoint_error_m": 0.03223729133605957,
+  "ulog": "/tmp/rematrice-sitl-rnf8tc9b/rootfs/log/2026-09-15/18_07_31.ulg",
+  "note": "Raw LOCAL_POSITION_NED origin differs from home with the modeled IMU lever arm; altitude above home and setpoint errors are derived from ULog."
+}

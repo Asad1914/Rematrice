@@ -1,0 +1,42 @@
+diff --git a/src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp b/src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp
+index 78e2a31069..9b3e7fcaa6 100644
+--- a/src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp
++++ b/src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp
+@@ -186,6 +186,11 @@ void SimulatorMavlink::send_controls()
+ 	send_esc_telemetry(hil_act_control);
+ }
+ 
++static inline int16_t fifo_saturate(float raw)
++{
++	return static_cast<int16_t>(math::constrain(raw, static_cast<float>(INT16_MIN), static_cast<float>(INT16_MAX)));
++}
++
+ void SimulatorMavlink::update_sensors(const hrt_abstime &time, const mavlink_hil_sensor_t &sensors)
+ {
+ 	// temperature only updated with baro
+@@ -219,9 +224,9 @@ void SimulatorMavlink::update_sensors(const hrt_abstime &time, const mavlink_hil
+ 				_last_accel_fifo.samples = 1;
+ 				_last_accel_fifo.dt = time - _last_accel_fifo.timestamp_sample;
+ 				_last_accel_fifo.timestamp_sample = time;
+-				_last_accel_fifo.x[0] = sensors.xacc / ACCEL_FIFO_SCALE;
+-				_last_accel_fifo.y[0] = sensors.yacc / ACCEL_FIFO_SCALE;
+-				_last_accel_fifo.z[0] = sensors.zacc / ACCEL_FIFO_SCALE;
++				_last_accel_fifo.x[0] = fifo_saturate(sensors.xacc / ACCEL_FIFO_SCALE);
++				_last_accel_fifo.y[0] = fifo_saturate(sensors.yacc / ACCEL_FIFO_SCALE);
++				_last_accel_fifo.z[0] = fifo_saturate(sensors.zacc / ACCEL_FIFO_SCALE);
+ 
+ 				_px4_accel[sensors.id].updateFIFO(_last_accel_fifo);
+ 			}
+@@ -262,9 +267,9 @@ void SimulatorMavlink::update_sensors(const hrt_abstime &time, const mavlink_hil
+ 				_last_gyro_fifo.samples = 1;
+ 				_last_gyro_fifo.dt = time - _last_gyro_fifo.timestamp_sample;
+ 				_last_gyro_fifo.timestamp_sample = time;
+-				_last_gyro_fifo.x[0] = sensors.xgyro / GYRO_FIFO_SCALE;
+-				_last_gyro_fifo.y[0] = sensors.ygyro / GYRO_FIFO_SCALE;
+-				_last_gyro_fifo.z[0] = sensors.zgyro / GYRO_FIFO_SCALE;
++				_last_gyro_fifo.x[0] = fifo_saturate(sensors.xgyro / GYRO_FIFO_SCALE);
++				_last_gyro_fifo.y[0] = fifo_saturate(sensors.ygyro / GYRO_FIFO_SCALE);
++				_last_gyro_fifo.z[0] = fifo_saturate(sensors.zgyro / GYRO_FIFO_SCALE);
+ 
+ 				_px4_gyro[sensors.id].updateFIFO(_last_gyro_fifo);
+ 			}
