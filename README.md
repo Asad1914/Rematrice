@@ -1,4 +1,4 @@
-# Rematrice Quadcopter — Gazebo Classic SITL
+# Rematrice Quadcopter (Gazebo Classic SITL)
 
 PX4 airframe **6017**, with the updated Rematrice CAD mesh, U8II Pro KV100
 propulsion, 27-inch G27x8.8 two-blade propellers, and a **12S 22 Ah Li-ion**
