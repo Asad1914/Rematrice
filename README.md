@@ -1,6 +1,6 @@
 # Rematrice Quadcopter (Gazebo Classic SITL)
 
-PX4 airframe **6017**, with the updated Rematrice CAD mesh, U8II Pro KV100
+PX4 airframe with the updated Rematrice CAD mesh, U8II Pro KV100
 propulsion, 27-inch G27x8.8 two-blade propellers, and a **12S 22 Ah Li-ion**
 battery profile. The provisional loaded mass is **15.17464 kg**, including
 5 kg payload and the PDF's 3.7 kg battery allowance.
